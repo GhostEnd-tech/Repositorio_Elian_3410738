@@ -13,9 +13,9 @@ namespace ConsoleApp1
             List<Personaje> personajes = new List<Personaje>()
             {
             
-            new princesa(),
-            new minero(),
-            new caballero()
+            new Princesa("Princesa"),
+            new Minero("Minero"),
+            new Caballero("Caballero")
 
             };
 
