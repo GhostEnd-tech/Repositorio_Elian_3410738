@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    internal class BolaHielo
+    internal interface ICurable
     {
-        public void Congelar(ICongelar objetivo) 
-        { 
-           objetivo.congelar();
-        }
+        void RecibirCura(int cura);
     }
 }

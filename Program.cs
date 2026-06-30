@@ -10,30 +10,24 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            List<Personaje> personajes = new List<Personaje>()
-            {
-            
-            new princesa(),
-            new minero(),
-            new caballero()
+            Guerrero g1 = new Guerrero("Guerrero");
+            Mago m1 = new Mago("Mago");
+            Sacerdote s1 = new Sacerdote("Sacerdote");
 
-            };
+            g1.Atacar(m1);
+            m1.Atacar(g1);
 
-            FireBall f1 = new FireBall();
-            BolaHielo b1 = new BolaHielo();
-           
-            foreach (var item in personajes)
-            {
-                if (item is ICongelar congelable)
-                {
-                    b1.Congelar(congelable);
-                }
-                if (item is IQuemable quemable)
-                {
-                    f1.Quemar(quemable);
-                }
-            }
+            s1.Curar(m1, 30);
+            g1.Atacar(m1);
+            g1.Atacar(s1);
+            s1.Atacar(g1);
+            g1.Atacar(m1);
+            m1.Atacar(g1);
+            s1.Curar(s1, 50);
 
+            m1.MostrarDatos();
+            g1.MostrarDatos();
+            s1.MostrarDatos();
         }
     }
 }
